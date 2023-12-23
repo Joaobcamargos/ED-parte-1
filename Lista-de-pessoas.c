@@ -14,7 +14,6 @@ void pushback( int idade_ , int peso_ ){
     Pessoa *a= (Pessoa*) malloc(sizeof(Pessoa));
  a->idade=idade_;
  a->peso=peso_;
- 
  a->prox=controle; //aponta para o endereço do ponteiro de controle
  controle=a; //armaneza o endereço de A 
 }
