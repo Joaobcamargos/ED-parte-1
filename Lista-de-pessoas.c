@@ -10,7 +10,7 @@ struct Pessoas *prox;
 typedef struct Pessoas Pessoa;
 Pessoa *controle;
 
-void pushback( int idade_ , int peso_ ){
+void pushfront( int idade_ , int peso_ ){
     Pessoa *a= (Pessoa*) malloc(sizeof(Pessoa));
  a->idade=idade_;
  a->peso=peso_;
@@ -19,6 +19,6 @@ void pushback( int idade_ , int peso_ ){
 }
 
 int main(){
-    pushback(12 , 90); // coloquei na minha lista de pessoas 
+    pushfront(12 , 90); // coloquei na minha lista de pessoas 
 }
 
