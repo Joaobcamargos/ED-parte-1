@@ -17,14 +17,15 @@ void pushfront( int idade_ , int peso_ ){
  a->prox=controle; //aponta para o endereço do ponteiro de controle
  controle=a; //armaneza o endereço de A 
 }
-void printlist(){
-    Pessoa *aux=controle;
-    while(aux!=NULL){
-        printf("Peso: %d Idade:%d",aux->idade,aux->peso);
-        aux=aux->prox;
+void printlist(Pessoa *ptr){
+    if(ptr!=NULL){
+        printf("\nPeso: %d Idade:%d",ptr->idade,ptr->peso);
+        printlist(ptr->prox);
     }
 }
 int main(){
     pushfront(12 , 90); // coloquei na minha lista de pessoas 
+    Pessoa *aux=controle;
+    printlist(aux);
 }
 
