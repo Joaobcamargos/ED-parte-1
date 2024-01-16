@@ -19,7 +19,7 @@ void pushfront( int idade_ , int peso_ ){
 }
 void pushback( int idade_ , int peso_ ){ 
     Pessoa *a= (Pessoa*) malloc(sizeof(Pessoa)); 
- a->idade=idade_;
+ a->idade=idade_; //
  a->peso=peso_;
  a->prox=NULL; 
  if(controle==NULL){
