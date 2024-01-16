@@ -8,14 +8,29 @@ struct Pessoas *prox;
 };
 
 typedef struct Pessoas Pessoa;
-Pessoa *controle;
+Pessoa *controle; 
 
-void pushfront( int idade_ , int peso_ ){
-    Pessoa *a= (Pessoa*) malloc(sizeof(Pessoa));
+void pushfront( int idade_ , int peso_ ){ 
+    Pessoa *a= (Pessoa*) malloc(sizeof(Pessoa)); 
  a->idade=idade_;
  a->peso=peso_;
- a->prox=controle; //aponta para o endereço do ponteiro de controle
- controle=a; //armaneza o endereço de A 
+ a->prox=controle; 
+ controle=a; 
+}
+void pushback( int idade_ , int peso_ ){ 
+    Pessoa *a= (Pessoa*) malloc(sizeof(Pessoa)); 
+ a->idade=idade_;
+ a->peso=peso_;
+ a->prox=NULL; 
+ if(controle==NULL){
+    controle=a;
+ }else{
+    Pessoa *aux=controle;
+    while (aux=!NULL){
+      aux=aux->prox;
+    }
+  aux->prox=a;
+ }
 }
 void printlist(Pessoa *ptr){
     if(ptr!=NULL){
@@ -24,7 +39,9 @@ void printlist(Pessoa *ptr){
     }
 }
 int main(){
-    pushfront(12 , 90); // coloquei na minha lista de pessoas 
+    pushfront(12 , 90); 
+    pushfront(13 , 20);
+    pushfront(11 , 10);
     Pessoa *aux=controle;
     printlist(aux);
 }
